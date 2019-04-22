@@ -1,0 +1,33 @@
+Problem 2 is a multi-step problem. 
+
+Running it gives you a hint:
+As a rule, men worry more about what they can't see than about what they can.
+
+This is a Julius Ceaser quote. From this, you might guess a caeser cypher will be involved.
+There is also a number spit out of 3. This could be the cypher key.
+
+A strings on the compiled file will show this:
+As a rulH
+e, men wH
+orry morH
+e about H
+what theH
+y can't H
+see thanH
+ about wH
+hat theyH
+ canf
+flag{rzqH
+ wkh qhwH
+
+
+From what is put out to the screen, you can guess this is the encrypted flag:
+flag{rzqv wkh qhw}
+
+From this info, you could decypher the flag with the key of three:
+
+flag{own the net}
+
+Alternately if someone threw this into gdb, with the right breakpoints, you could see values for flag and key. 
+The key is actually 315, but due to keeping the key as letters, you mod it by 26. This gives you the key of 3.
+Also if you ran it long enough, you might even catch the decrypted flag.

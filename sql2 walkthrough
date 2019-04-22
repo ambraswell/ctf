@@ -1,0 +1,7 @@
+mysql -u root -p test < sql2.sql 
+mysql -u root -p test 
+select * from tbl_trixy  will show there is data and that it probably needs to be ordered in some way
+select * from tbl_trixy order by order asc; should work, but order is a reserve word
+select * from tbl_trixy order by tbl_trixy.order asc; works, then they have to transcribe the flag.
+
+Flag is - flag{Do or dont.There is no try-Yoda}

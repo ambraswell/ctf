@@ -1,0 +1,13 @@
+sql1 walkthrough:
+service mysql start
+mysql -u root -p 
+create database test;
+ctrl+d
+mysql -u root -p test < sql1.sql
+mysql -u root -p test
+desc test.tbl_flag;
+select * from tbl_flag where is_flag = 1;
+
+The flag is Little Bobby Tables
+
+I didn't want to put flag{} around it to keep it from being grepable.

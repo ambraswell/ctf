@@ -1,0 +1,30 @@
+Problem 1 walkthrough
+
+Running ./problem1 will yield nothing
+The next logical step will be to strings it
+They will probably see the easy_flag pop up
+Since running the program didn't hit this function, they'll probably move to a debugger.
+Opening it with gdb - "gdb problem1"
+In GDB, info func will give this list
+	0x00000000000004f0  _init
+	0x0000000000000520  malloc@plt
+	0x0000000000000540  _start
+	0x0000000000000570  deregister_tm_clones
+	0x00000000000005b0  register_tm_clones
+	0x0000000000000600  __do_global_dtors_aux
+	0x0000000000000640  frame_dummy
+	0x000000000000064a  main
+	0x0000000000000655  easy_flag
+	0x0000000000000720  __libc_csu_init
+	0x0000000000000790  __libc_csu_fini	
+	0x0000000000000794  _fini
+This will confirm that easy_flag is a function. 
+Then in the gdb prompt, entering a breakpoint at main
+Then run the program
+Then calling easy_flag will work, but not give them what they want
+A quick google search for "gdb running functions outside of main" will yield this link
+https://stackoverflow.com/questions/48608134/gdb-calling-a-function-that-is-not-in-main
+
+Running this will yield the flag - print ((char*(*)()) easy_flag)()
+
+The flag is - flag{You have found the flag}
